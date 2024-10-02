@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { TRPCProvider } from "@/app/api/trpc/[trpc]/_trpc/TRPCProvider";
-import { cookieToInitialState } from "wagmi";
 import { headers } from "next/headers";
-import { config } from "@/config";
 import Web3ModalProvider from "./_layout/Web3Provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -35,7 +34,10 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <Web3ModalProvider cookies={cookies}>
-                    <TRPCProvider>{children}</TRPCProvider>
+                    <TRPCProvider>
+                        {children}
+                        <Toaster />
+                    </TRPCProvider>
                 </Web3ModalProvider>
             </body>
         </html>
