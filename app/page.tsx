@@ -11,7 +11,7 @@ export default function Home() {
                 </h2>
                 <div className="text-center">
                     <h3 className="text-2xl text-white">Modulo 1 Guatemala</h3>
-                    <h4 className="text-xl text-white font-mono text-blue-400 font-bold">
+                    <h4 className="text-xl font-mono text-blue-400 font-bold">
                         Faucet
                     </h4>
                 </div>
