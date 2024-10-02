@@ -13,8 +13,6 @@ import {
     useReadContracts,
     useWriteContract,
     useSignMessage,
-    useClient,
-    useWaitForTransactionReceipt,
     useSimulateContract,
     useConfig,
 } from "wagmi";
@@ -140,9 +138,9 @@ export default function EnrollmentCard() {
                         <Button
                             onClick={handleEnroll}
                             className="w-full"
-                            disabled={isEnrolling}
+                            disabled={isEnrolling || loading}
                         >
-                            {isEnrolling ? "Enrolling..." : "ENROLL"}
+                            {isEnrolling || loading ? "Enrolling..." : "ENROLL"}
                         </Button>
                     </>
                 ) : (
@@ -190,9 +188,11 @@ export default function EnrollmentCard() {
                                         );
                                     }}
                                     className="w-full"
-                                    disabled={isPending}
+                                    disabled={isPending || loading}
                                 >
-                                    {isPending ? "Claiming..." : "CLAIM"}
+                                    {isPending || loading
+                                        ? "Claiming..."
+                                        : "CLAIM"}
                                 </Button>
                             </>
                         ) : (

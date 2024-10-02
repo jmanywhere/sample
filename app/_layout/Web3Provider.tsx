@@ -1,8 +1,7 @@
 "use client";
 
 import { wagmiAdapter, projectId, sepoliaArbitrum, networks } from "@/config";
-import { CaipNetwork, createAppKit } from "@reown/appkit/react";
-import { arbitrum } from "@reown/appkit/networks";
+import { createAppKit } from "@reown/appkit/react";
 import React, { type ReactNode } from "react";
 import { cookieToInitialState, WagmiProvider, type Config } from "wagmi";
 
